@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrace do klubu HAMO</title>
+    
+<style>
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png'),url('ham_transparent.png');
+        background-repeat: repeat;
+        background-size: 80px;
+        opacity: 0.07;
+        z-index: -1;
+    }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .checkbox {
+            margin-top: 15px;
+        }
+        .checkbox label {
+            display: inline;
+            font-weight: normal;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            border: none;
+            background-color: #0077cc;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registrace do klubu HAMO</h2>
+        <form action="https://formspree.io/f/mwkgrqgv" method="POST">
+            <label for="jmeno">Jméno:</label>
+            <input type="text" id="jmeno" name="Jméno" required>
+
+            <label for="prijmeni">Příjmení:</label>
+            <input type="text" id="prijmeni" name="Příjmení" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="telefon">Mobil:</label>
+            <input type="tel" id="telefon" name="Mobil" required>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="Souhlas" required>
+                    Souhlasím se vstupem do klubu HAMO systems a s obchodními podmínkami akce.
+                </label>
+            </div>
+
+            <button type="submit">Odeslat registraci</button>
+        </form>
+    </div>
+</body>
+</html>
