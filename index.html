@@ -1,169 +1,206 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Registrace do klubu HAMO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <style>
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('ham_transparent.png');
-            background-repeat: repeat;
-            background-size: 80px;
-            opacity: 0.07;
-            z-index: -1;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrace do klubu HAMO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('ham_transparent.png');
+      background-repeat: repeat;
+      background-size: 80px;
+      opacity: 0.07;
+      z-index: -1;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
 
-        .form-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
 
-        h2 {
-            color: #333;
-        }
+    h2 {
+      color: #333;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-        input[type="text"], input[type="email"], input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
 
-        .checkbox {
-            margin-top: 15px;
-            text-align: left;
-        }
+    .checkbox {
+      margin-top: 15px;
+      text-align: left;
+    }
 
-        .checkbox label {
-            display: inline;
-            font-weight: normal;
-        }
+    .checkbox label {
+      display: inline;
+      font-weight: normal;
+    }
 
-        button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-top: 25px;
-            border: none;
-            background-color: #0077cc;
-            color: white;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      border: none;
+      background-color: #0077cc;
+      color: white;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
 
-        button:hover {
-            background-color: #005fa3;
-            transform: scale(1.03);
-        }
+    button:hover {
+      background-color: #005fa3;
+      transform: scale(1.03);
+    }
 
-        .success-message {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 2rem;
-            color: white;
-            text-shadow:
-                -1px -1px 0 #000,
-                 1px -1px 0 #000,
-                -1px  1px 0 #000,
-                 1px  1px 0 #000;
-            display: none;
-            line-height: 1.3;
-            padding: 20px;
-        }
+    .success-message {
+      display: none;
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 1.8rem;
+      color: white;
+      text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+      line-height: 1.4;
+      padding: 20px;
+    }
 
-        @media (max-width: 500px) {
-            .success-message {
-                font-size: 1.7rem;
-            }
-        }
-    </style>
+    .success-line {
+      margin-bottom: 10px;
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid white;
+      animation: typewriter 2.5s steps(45) 0.5s 1 normal both,
+                 blinkTextCursor 750ms steps(45) infinite;
+    }
+
+    @keyframes typewriter {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blinkTextCursor {
+      from {
+        border-right-color: white;
+      }
+      to {
+        border-right-color: transparent;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .success-message {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="form-container" id="formBlock">
-        <h2>Registrace do klubu HAMO</h2>
-        <form id="hamoForm">
-            <label for="jmeno">Jméno:</label>
-            <input type="text" id="jmeno" name="Jméno" required>
+  <div class="form-container" id="formBlock">
+    <h2>Registrace do klubu HAMO</h2>
+    <form id="hamoForm">
+      <label for="jmeno">Jméno:</label>
+      <input type="text" id="jmeno" name="Jméno" required />
 
-            <label for="prijmeni">Příjmení:</label>
-            <input type="text" id="prijmeni" name="Příjmení" required>
+      <label for="prijmeni">Příjmení:</label>
+      <input type="text" id="prijmeni" name="Příjmení" required />
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="Email" required>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="Email" required />
 
-            <label for="telefon">Mobil:</label>
-            <input type="tel" id="telefon" name="Mobil" required>
+      <label for="telefon">Mobil:</label>
+      <input type="tel" id="telefon" name="Mobil" required />
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="Souhlas" required>
-                    Souhlasím se vstupem do klubu HAMO systems a s obchodními podmínkami akce.
-                </label>
-            </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="Souhlas" required />
+          Souhlasím se vstupem do klubu HAMO systems a s obchodními podmínkami akce.
+        </label>
+      </div>
 
-            <button type="submit">Odeslat registraci</button>
-        </form>
+      <button type="submit">Odeslat registraci</button>
+    </form>
 
-        <div class="success-message" id="successMessage">
-            Vítej v HAMO klubu,<br>první drink máš zdarma 🍹
-        </div>
+    <div class="success-message" id="successMessage">
+      <div class="success-line">YOU MADE IT. RAVE MODE = MAXED 🔊</div>
+      <div class="typewriter">WELCOME TO THE ILLEGAL VIBES HQ 😈</div>
     </div>
+  </div>
 
-    <script>
-        const form = document.getElementById('hamoForm');
-        const successMessage = document.getElementById('successMessage');
+  <script>
+    const form = document.getElementById('hamoForm');
+    const successMessage = document.getElementById('successMessage');
 
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-            const formData = new FormData(form);
+      const formData = new FormData(form);
 
-            try {
-                const response = await fetch("https://formspree.io/f/mldbkpgl", {
-                    method: "POST",
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                } else {
-                    alert('Nastala chyba při odesílání. Zkuste to prosím znovu.');
-                }
-            } catch (error) {
-                alert('Nepodařilo se spojit se serverem. Zkuste to později.');
-            }
+      try {
+        const response = await fetch("https://formspree.io/f/mldbkpgl", {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
         });
-    </script>
+
+        if (response.ok) {
+          form.style.display = "none";
+          successMessage.style.display = "block";
+        } else {
+          alert("Nastala chyba při odesílání. Zkuste to prosím znovu.");
+        }
+      } catch (error) {
+        alert("Nepodařilo se spojit se serverem. Zkuste to později.");
+      }
+    });
+  </script>
 </body>
 </html>
